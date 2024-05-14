@@ -19,6 +19,8 @@ import dataRouter from "./routes/salaryData.js";
 app.use("/api/v1/data", dataRouter);
 
 app.use(errorHandler);
+
+ViteExpress.config({ mode: "production" });
 const start = async () => {
   try {
     await connect(DBURI);
@@ -32,4 +34,5 @@ const start = async () => {
 };
 
 start();
+
 
